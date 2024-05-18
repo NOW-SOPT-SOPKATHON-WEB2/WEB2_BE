@@ -1,7 +1,7 @@
 # WEB2_BE
 > 34th NOW SOPT SOPKATHON "Nowhere, Now here" (24.05.18-19)
-- 서비스 이름 :
-- 소개 :
+- 서비스 이름 : g0-100(가제)
+- 소개 : 당신의 0일 탈출, 1일 시작을 위한 연애 채팅 시뮬레이터
 
 ## 🗒️ API 명세서 & 역할 분배
 | Method | Name | 담당 | 
