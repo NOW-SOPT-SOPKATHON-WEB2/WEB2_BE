@@ -25,7 +25,6 @@ public class Result extends BaseTimeEntity {
     private int maxWeight;
 
     @Column(nullable = false)
-    @Lob
     private String imageUrl;
 
     @Column(nullable = false)
