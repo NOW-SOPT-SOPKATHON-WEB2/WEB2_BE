@@ -33,7 +33,6 @@ public class QuestionService {
             final Long memberId,
             final Long situationId
     ) {
-        memberService.findMemberById(memberId);
         situationService.findSituationById(situationId);
 
         Question question = questionRepository.findBySituationIdAndPageNumber(situationId, pageNumber).orElseThrow(
