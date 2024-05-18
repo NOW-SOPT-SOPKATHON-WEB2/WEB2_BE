@@ -7,6 +7,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.sopt.sopkathon.domain.Answer;
 import com.sopt.sopkathon.domain.QAnswer;
 import com.sopt.sopkathon.service.dto.response.AnswerResponseDto;
+import com.sopt.sopkathon.service.dto.response.AnswerWeightResponseDto;
 import jakarta.persistence.EntityManager;
 import java.util.List;
 
@@ -26,5 +27,14 @@ public class AnswerRepositoryCustomImpl implements AnswerRepositoryCustom{
             answer.content
         )).from(answer)
         .where(answer.question.id.eq(questionId)).fetch();
+  }
+
+  @Override
+  public AnswerWeightResponseDto getWeightByAnswerId(Long answerId) {
+    return queryFactory.
+        select(Projections.constructor(AnswerWeightResponseDto.class,
+            answer.weight
+        )).from(answer)
+        .where(answer.id.eq(answerId)).fetchOne();
   }
 }

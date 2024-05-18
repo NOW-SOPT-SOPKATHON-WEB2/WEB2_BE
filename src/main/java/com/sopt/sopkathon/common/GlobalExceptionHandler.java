@@ -23,15 +23,15 @@ public class GlobalExceptionHandler {
     /**
      * 500 INTERNAL SERVER ERROR
      */
-    @ExceptionHandler(BusinessException.class)
-    protected ResponseEntity<CommonResponse> handleInternalServerError(final BusinessException e) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(CommonResponse.error(ErrorMessage.INTERNAL_SERVER_ERROR));
-    }
+            @ExceptionHandler(BusinessException.class)
+            protected ResponseEntity<CommonResponse> handleInternalServerError(final BusinessException e) {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body(CommonResponse.error(ErrorMessage.INTERNAL_SERVER_ERROR));
+            }
 
-    @ExceptionHandler(Exception.class)
-    protected ResponseEntity<CommonResponse> handleInternalServerError(final Exception e) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(CommonResponse.error(ErrorMessage.INTERNAL_SERVER_ERROR));
-    }
+            @ExceptionHandler(Exception.class)
+            protected ResponseEntity<CommonResponse> handleInternalServerError(final Exception e) {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body(CommonResponse.error(ErrorMessage.INTERNAL_SERVER_ERROR));
+            }
 }
