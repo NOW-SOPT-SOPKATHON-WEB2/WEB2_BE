@@ -13,6 +13,7 @@ public enum SuccessMessage {
      */
     PROCESS_SUCCESS(HttpStatus.OK.value(), "OK"),
     GET_QUESTION_SUCCESS(HttpStatus.OK.value(), "질문 조회를 성공했습니다."),
+    GET_RESULT_SUCCESS(HttpStatus.OK.value(), "결과 조회를 성공했습니다."),
     ANSWER_FIND_SUCCESS(HttpStatus.OK.value(), "답변 목록 조회에 성공했습니다."),
     ANSWER_WEIGHT_FIND_SUCCESS(HttpStatus.OK.value(), "답변 가중치 조회에 성공했습니다."),
 

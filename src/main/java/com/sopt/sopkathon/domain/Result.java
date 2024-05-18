@@ -25,11 +25,16 @@ public class Result extends BaseTimeEntity {
     private int maxWeight;
 
     @Column(nullable = false)
-    private String content;
+    private String imageUrl;
 
     @Column(nullable = false)
-    @Lob
-    private String imageUrl;
+    private Boolean isSuccess;
+
+    @Column(nullable = false)
+    private String title;
+
+    @Column(nullable = false)
+    private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Situation situation;
