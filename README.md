@@ -14,6 +14,7 @@
 <br>
 
 ## ✨ ERD
+<img width="1000" src="https://github.com/NOW-SOPT-SOPKATHON-WEB2/WEB2_BE/assets/69389288/41150a44-a82a-415e-b2ae-5607e8d8091a">
 
 <br>
 
