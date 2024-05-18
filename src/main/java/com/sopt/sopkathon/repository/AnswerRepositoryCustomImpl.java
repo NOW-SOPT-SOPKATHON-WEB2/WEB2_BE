@@ -33,7 +33,8 @@ public class AnswerRepositoryCustomImpl implements AnswerRepositoryCustom{
   public AnswerWeightResponseDto getWeightByAnswerId(Long answerId) {
     return queryFactory.
         select(Projections.constructor(AnswerWeightResponseDto.class,
-            answer.weight
+            answer.weight,
+            answer.content
         )).from(answer)
         .where(answer.id.eq(answerId)).fetchOne();
   }
