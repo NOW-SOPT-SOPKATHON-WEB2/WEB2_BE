@@ -49,8 +49,8 @@ public class QuestionService {
             q.add(questionByQuestionId);
         }
 
-        if (pageNumber > MAX_PAGE_NUMBER) { pageNumber = 1; }
         pageNumber++;
+        if (pageNumber > MAX_PAGE_NUMBER) { pageNumber = 1; }
 
         return QuestionCheckListResponseDto.of(q);
     }
