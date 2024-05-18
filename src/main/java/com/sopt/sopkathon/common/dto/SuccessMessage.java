@@ -12,6 +12,7 @@ public enum SuccessMessage {
      * 200 OK SUCCESS
      */
     PROCESS_SUCCESS(HttpStatus.OK.value(), "OK"),
+    GET_QUESTION_SUCCESS(HttpStatus.OK.value(), "질문 조회를 성공했습니다.")
     ;
 
     private final int status;
