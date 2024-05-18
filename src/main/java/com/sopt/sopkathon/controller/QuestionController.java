@@ -3,6 +3,7 @@ package com.sopt.sopkathon.controller;
 import com.sopt.sopkathon.common.dto.CommonResponse;
 import com.sopt.sopkathon.common.dto.SuccessMessage;
 import com.sopt.sopkathon.service.QuestionService;
+import com.sopt.sopkathon.service.dto.response.QuestionCheckListResponseDto;
 import com.sopt.sopkathon.service.dto.response.QuestionCheckResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ public class QuestionController {
     private final QuestionService questionService;
 
     @GetMapping("/{situationId}")
-    public CommonResponse<QuestionCheckResponseDto> getQuestion(
+    public CommonResponse<QuestionCheckListResponseDto> getQuestion(
             @RequestHeader final Long memberId,
             @PathVariable final Long situationId
     ) {
