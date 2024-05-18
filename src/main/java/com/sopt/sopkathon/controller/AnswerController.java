@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/answer")
+@RequestMapping("/api/v1/answers")
 public class AnswerController {
 
   private final AnswerService answerService;
@@ -30,5 +30,17 @@ public class AnswerController {
         .body(CommonResponse.success(
             SuccessMessage.ANSWER_FIND_SUCCESS,
             answerService.findAnswerList(memberId, questionId)));
+  }
+
+  @GetMapping("/weight/{answerId}")
+  public ResponseEntity<CommonResponse> getAnswerWeight (
+      @RequestHeader(name="memberId") Long memberId,
+      @PathVariable(name = "answerId") Long answerId
+  ) {
+    return ResponseEntity
+        .status(HttpStatus.FOUND)
+        .body(CommonResponse.success(
+            SuccessMessage.ANSWER_FIND_SUCCESS,
+            answerService.findAnswerWeight(memberId, answerId)));
   }
 }
