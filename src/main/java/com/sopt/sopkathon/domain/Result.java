@@ -28,6 +28,7 @@ public class Result extends BaseTimeEntity {
     private String content;
 
     @Column(nullable = false)
+    @Lob
     private String imageUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)
