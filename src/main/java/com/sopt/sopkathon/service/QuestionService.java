@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 @Transactional
 public class QuestionService {
-    int PAGE_NUMBER = 1;
+    private int pageNumber = 1;
 
     private final QuestionRepository questionRepository;
     private final MemberService memberService;
@@ -35,10 +35,10 @@ public class QuestionService {
         memberService.findMemberById(memberId);
         situationService.findSituationById(situationId);
 
-        Question question = questionRepository.findBySituationIdAndPageNumber(situationId, PAGE_NUMBER).orElseThrow(
+        Question question = questionRepository.findBySituationIdAndPageNumber(situationId, pageNumber).orElseThrow(
                 () -> new BusinessException(ErrorMessage.QUESTION_NOT_FOUND)
         );
-
+        pageNumber++;
         return QuestionCheckResponseDto.of(question);
     }
 }
