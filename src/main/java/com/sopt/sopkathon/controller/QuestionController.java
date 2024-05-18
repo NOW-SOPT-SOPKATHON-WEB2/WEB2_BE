@@ -14,11 +14,11 @@ public class QuestionController {
 
     private final QuestionService questionService;
 
-//    @GetMapping("/{situationId}")
-//    public CommonResponse<QuestionCheckResponseDto> getQuestion(
-//            @RequestHeader final Long memberId,
-//            @PathVariable final Long situationId
-//    ) {
-//        return CommonResponse.success(SuccessMessage.GET_QUESTION_SUCCESS, questionService.)
-//    }
+    @GetMapping("/{situationId}")
+    public CommonResponse<QuestionCheckResponseDto> getQuestion(
+            @RequestHeader final Long memberId,
+            @PathVariable final Long situationId
+    ) {
+        return CommonResponse.success(SuccessMessage.GET_QUESTION_SUCCESS, questionService.findQuestionCheck(memberId, situationId));
+    }
 }

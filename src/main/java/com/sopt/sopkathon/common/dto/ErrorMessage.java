@@ -20,7 +20,6 @@ public enum ErrorMessage {
      */
     MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND.value(), "ID에 해당하는 사용자가 존재하지 않습니다."),
     SITUATION_NOT_FOUND(HttpStatus.NOT_FOUND.value(), "ID에 해당하는 상황이 존재하지 않습니다."),
-
     QUESTION_NOT_FOUND(HttpStatus.NOT_FOUND.value(), "ID에 해당하는 질문이 존재하지 않습니다."),
 
     /**

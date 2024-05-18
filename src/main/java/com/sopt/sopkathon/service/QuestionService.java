@@ -2,6 +2,7 @@ package com.sopt.sopkathon.service;
 
 import com.sopt.sopkathon.common.dto.ErrorMessage;
 import com.sopt.sopkathon.domain.Question;
+import com.sopt.sopkathon.exceptioon.BusinessException;
 import com.sopt.sopkathon.exceptioon.NotFoundException;
 import com.sopt.sopkathon.repository.QuestionRepository;
 import com.sopt.sopkathon.service.dto.response.QuestionCheckResponseDto;
@@ -13,7 +14,11 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 @Transactional
 public class QuestionService {
+    int PAGE_NUMBER = 1;
+
     private final QuestionRepository questionRepository;
+    private final MemberService memberService;
+    private final SituationService situationService;
 
     public Question findQuestionById(
         final Long questionId
@@ -23,4 +28,17 @@ public class QuestionService {
         );
     }
 
+    public QuestionCheckResponseDto findQuestionCheck(
+            final Long memberId,
+            final Long situationId
+    ) {
+        memberService.findMemberById(memberId);
+        situationService.findSituationById(situationId);
+
+        Question question = questionRepository.findBySituationIdAndPageNumber(situationId, PAGE_NUMBER).orElseThrow(
+                () -> new BusinessException(ErrorMessage.QUESTION_NOT_FOUND)
+        );
+
+        return QuestionCheckResponseDto.of(question);
+    }
 }
