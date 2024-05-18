@@ -22,7 +22,7 @@ public class AnswerController {
 
   @GetMapping("{questionId}")
   public ResponseEntity<CommonResponse> findAnswer(
-      @RequestHeader Long memberId,
+      @RequestHeader(name="memberId") Long memberId,
       @PathVariable(name = "questionId") Long questionId
   ) {
     return ResponseEntity
