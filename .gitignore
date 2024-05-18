@@ -8,6 +8,8 @@ build/
 *.yml
 *.yaml
 
+src/main/generated/*
+
 ### STS ###
 .apt_generated
 .classpath
