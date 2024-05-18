@@ -26,7 +26,7 @@ public class AnswerController {
       @PathVariable(name = "questionId") Long questionId
   ) {
     return ResponseEntity
-        .status(HttpStatus.FOUND)
+        .status(HttpStatus.OK)
         .body(CommonResponse.success(
             SuccessMessage.ANSWER_FIND_SUCCESS,
             answerService.findAnswerList(memberId, questionId)));
@@ -38,7 +38,7 @@ public class AnswerController {
       @PathVariable(name = "answerId") Long answerId
   ) {
     return ResponseEntity
-        .status(HttpStatus.FOUND)
+        .status(HttpStatus.OK)
         .body(CommonResponse.success(
             SuccessMessage.ANSWER_FIND_SUCCESS,
             answerService.findAnswerWeight(memberId, answerId)));
