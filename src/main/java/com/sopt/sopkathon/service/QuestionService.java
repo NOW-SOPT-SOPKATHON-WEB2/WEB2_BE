@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 @Transactional
 public class QuestionService {
+    private static final int MAX_PAGE_NUMBER = 8;
     private int pageNumber = 1;
 
     private final QuestionRepository questionRepository;
@@ -39,6 +40,7 @@ public class QuestionService {
                 () -> new BusinessException(ErrorMessage.QUESTION_NOT_FOUND)
         );
         pageNumber++;
+        if (pageNumber > MAX_PAGE_NUMBER) { pageNumber = 1; }
         return QuestionCheckResponseDto.of(question);
     }
 }
