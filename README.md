@@ -49,9 +49,3 @@
 │  │        └─ application.yml  
 │  └─🗂️ build.gradle   
 ```
-<br>
-
-## 🧑🏻‍💻 Before & After
-| Before | After |
-| :--: | :--: |
-| <img width="500" src="https://github.com/NOW-SOPT-SOPKATHON-WEB2/WEB2_BE/assets/69389288/e917ec8f-1d08-4ec8-9a20-a5d156548ee9">  | 
